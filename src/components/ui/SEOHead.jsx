@@ -4,8 +4,8 @@ import { getHrefLangs } from "../../lib/routes";
 
 const seoData = {
     de: {
-        title: "BringsAI – KI-Automatisierung für Unternehmen",
-        description: "BringsAI automatisiert wiederkehrende Aufgaben mit KI. Effizientere Abläufe, weniger Stress, mehr Zeit für das Wesentliche. DSGVO-konform."
+        title: "BringsAI – Automatisierte Abläufe für weniger Kosten und mehr Umsatz",
+        description: "Automatisieren Sie wiederkehrende Aufgaben in Vertrieb, Support und Backoffice. Sparen Sie Zeit, reduzieren Sie Aufwand und arbeiten Sie strukturierter."
     },
     en: {
         title: "BringsAI – AI Automation for Businesses",
