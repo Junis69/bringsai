@@ -17,11 +17,11 @@ export function Hero() {
                     background: 'radial-gradient(ellipse 55% 38% at 50% 38%, rgba(59,130,246,0.15) 0%, transparent 72%)',
                 }}
             />
-            {/* Mobile-only enhanced center glow */}
+            {/* Mobile-only subtle glow boost - slightly stronger than desktop */}
             <div
                 className="absolute inset-0 pointer-events-none md:hidden"
                 style={{
-                    background: 'radial-gradient(ellipse 85% 55% at 50% 32%, rgba(59,130,246,0.35) 0%, rgba(99,102,241,0.18) 35%, transparent 65%)',
+                    background: 'radial-gradient(ellipse 60% 42% at 50% 36%, rgba(59,130,246,0.08) 0%, transparent 70%)',
                 }}
             />
             {/* Bottom-left corner glow — subtle depth */}

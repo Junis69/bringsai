@@ -546,18 +546,18 @@ section[id] {
         padding-top: 100px !important;
     }
     
-    /* Intensify center glow on mobile - clear, sharp gradient */
+    /* Subtle glow boost on mobile - similar to desktop, just slightly more visible */
     .hero-glow-center {
-        background: radial-gradient(ellipse 75% 50% at 50% 34%, rgba(59,130,246,0.32) 0%, rgba(99,102,241,0.15) 45%, transparent 70%) !important;
+        background: radial-gradient(ellipse 58% 40% at 50% 38%, rgba(59,130,246,0.18) 0%, transparent 72%) !important;
     }
     
-    /* Stronger corner glows on mobile */
+    /* Slightly stronger corner glows on mobile */
     .hero-glow-bl {
-        background: radial-gradient(ellipse 55% 45% at 8% 92%, rgba(59,130,246,0.18) 0%, transparent 65%) !important;
+        background: radial-gradient(ellipse 50% 40% at 4% 96%, rgba(59,130,246,0.10) 0%, transparent 70%) !important;
     }
     
     .hero-glow-br {
-        background: radial-gradient(ellipse 55% 45% at 92% 92%, rgba(59,130,246,0.18) 0%, transparent 65%) !important;
+        background: radial-gradient(ellipse 50% 40% at 96% 96%, rgba(59,130,246,0.10) 0%, transparent 70%) !important;
     }
     
     /* Allow logos section to extend slightly below fold */
