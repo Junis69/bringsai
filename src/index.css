@@ -534,18 +534,7 @@ section[id] {
 }
 
 /* ===== Mobile Hero Section Optimizations ===== */
-/* Adjust hero height on mobile so logos peek at bottom */
 @media (max-width: 767px) {
-    .hero-section-mobile {
-        min-height: 100svh !important;
-        padding-bottom: 0 !important;
-    }
-    
-    /* Reduce top padding on mobile to allow logos to peek */
-    .hero-section-mobile {
-        padding-top: 100px !important;
-    }
-    
     /* Subtle glow boost on mobile - similar to desktop, just slightly more visible */
     .hero-glow-center {
         background: radial-gradient(ellipse 58% 40% at 50% 38%, rgba(59,130,246,0.18) 0%, transparent 72%) !important;
@@ -558,12 +547,6 @@ section[id] {
     
     .hero-glow-br {
         background: radial-gradient(ellipse 50% 40% at 96% 96%, rgba(59,130,246,0.10) 0%, transparent 70%) !important;
-    }
-    
-    /* Allow logos section to extend slightly below fold */
-    .hero-logos-mobile {
-        margin-bottom: -40px !important;
-        padding-bottom: 40px !important;
     }
 }
 
