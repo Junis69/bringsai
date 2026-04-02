@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(certutil:*)",
+      "Bash(npx vite build:*)",
+      "Bash(test:*)",
+      "Bash(findstr:*)",
+      "Bash(del \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\src\\\\components\\\\sections\\\\AutomationOverview.jsx\")",
+      "Bash(del \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\src\\\\components\\\\sections\\\\ExampleSection.jsx\")",
+      "Bash(del \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\src\\\\components\\\\sections\\\\MessageSection.jsx\")",
+      "Bash(del \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\src\\\\components\\\\sections\\\\AutomationExamples.jsx\")",
+      "Bash(del \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\src\\\\components\\\\sections\\\\TargetAudience.jsx\")",
+      "Bash(del \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\src\\\\components\\\\sections\\\\StatsSection.jsx\")",
+      "Bash(npm uninstall:*)",
+      "Bash(curl:*)",
+      "Bash(ls -la \"c:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\public\"\" | grep -v \"^d \")",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:bringsai.io)",
+      "Bash(python -c \"import zipfile; z = zipfile.ZipFile\\(''deploy.zip''\\); print\\(''\\\\n''.join\\(sorted\\(z.namelist\\(\\)\\)[:30]\\)\\)\")",
+      "Bash(python -c \"import zipfile; z = zipfile.ZipFile\\(''''deploy.zip''''\\); print\\(''''\\\\n''''.join\\(sorted\\(z.namelist\\(\\)\\)\\)\\)\")",
+      "Bash(unzip -l C:/AntiGravity/BringsAI/Website/deploy.zip)",
+      "Bash(rm -f \"../deploy.zip\")",
+      "Bash(zip -r \"../deploy.zip\" . -x \"*.DS_Store\")",
+      "Bash(powershell.exe -Command \"Remove-Item ''../deploy.zip'' -ErrorAction SilentlyContinue; Compress-Archive -Path ''./*'',''./.htaccess'' -DestinationPath ''../deploy.zip'' -Force\")",
+      "Bash(powershell.exe -Command \"[System.IO.Compression.ZipFile]::OpenRead\\(''C:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\deploy.zip''\\).Entries | Where-Object { $_.Name -eq ''.htaccess'' -or $_.FullName -like ''*.htaccess'' } | Select-Object FullName, Length\")",
+      "Bash(powershell.exe -Command \"Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::OpenRead\\(''C:\\\\AntiGravity\\\\BringsAI\\\\Website\\\\deploy.zip''\\).Entries | Select-Object FullName, Length | Where-Object { $_.FullName -like ''*htaccess*'' }\")"
+    ]
+  }
+}

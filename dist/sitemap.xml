@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage DE -->
+  <url>
+    <loc>https://bringsai.io/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bringsai.io/en" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage EN -->
+  <url>
+    <loc>https://bringsai.io/en</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bringsai.io/en" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Über uns DE -->
+  <url>
+    <loc>https://bringsai.io/ueber-uns</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/ueber-uns" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/about" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/ueber-uns" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/about" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Fallstudien Detail Pages DE -->
+  <url>
+    <loc>https://bringsai.io/fallstudien/1</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/1" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/1" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/fallstudien/2</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/2" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/2" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/fallstudien/3</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/3" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/3" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/fallstudien/4</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/4" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/4" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Fallstudien Detail Pages EN -->
+  <url>
+    <loc>https://bringsai.io/en/case-studies/1</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/1" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/1" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/case-studies/2</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/2" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/2" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/case-studies/3</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/3" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/3" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/case-studies/4</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/fallstudien/4" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/case-studies/4" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://bringsai.io/impressum</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/impressum" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/imprint" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/imprint</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/impressum" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/imprint" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://bringsai.io/datenschutz</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/datenschutz" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/privacy" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/datenschutz" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/privacy" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://bringsai.io/agb</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/agb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/terms" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bringsai.io/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bringsai.io/agb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bringsai.io/en/terms" />
+    <lastmod>2026-03-16</lastmod>
+    <priority>0.2</priority>
+  </url>
+</urlset>

@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* ── Dark SaaS Theme ── */
+
+:root {
+  /* Core palette – deep dark grays */
+  --background: #050507;
+  --background-secondary: #050507;
+  --foreground: #f0f0f5;
+
+  --primary: #f0f0f5;
+  --primary-foreground: #0a0a0f;
+
+  /* Card surfaces – subtle elevation */
+  --card: #12121a;
+  --card-hover: #16161f;
+  --card-foreground: #f0f0f5;
+
+  /* Muted – for less prominent elements */
+  --muted: #1a1a24;
+  --muted-foreground: #8a8a9a;
+
+  /* Borders – subtle separation */
+  --border: #1e1e2a;
+  --border-light: #2a2a38;
+  --border-hover: #3a3a4a;
+
+  --radius: 0.875rem;
+
+  /* Blue accent – subtle, professional SaaS blue */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-light: rgba(59, 130, 246, 0.10);
+  --accent-glow: rgba(59, 130, 246, 0.06);
+
+  /* Section alternating background */
+  --section-alt: var(--background);
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+  width: 100%;
+  position: relative;
+}
+
+/* Global text wrap for German compound words on mobile */
+h1, h2, h3, h4, h5, h6, p, a, span {
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Custom scrollbar — dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* Scroll offset for fixed navbar */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* ── Subtle scroll-triggered animations ── */
+
+@keyframes apple-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apple-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero-animate-main {
+  animation: apple-fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+.hero-animate-pill {
+  animation: apple-fade-in-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.hero-animate-line2 {
+  animation: apple-fade-in-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-animate-subhead {
+  animation: apple-fade-in-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.hero-animate-buttons {
+  animation: apple-fade-in-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Safari/iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .hero-animate-main,
+  .hero-animate-pill,
+  .hero-animate-line2,
+  .hero-animate-subhead,
+  .hero-animate-buttons {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}

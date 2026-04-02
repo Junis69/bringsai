@@ -1,0 +1,84 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Remove trailing slashes (except root /)
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^ %1 [R=301,L]
+
+  # Redirect /de and /de/* to German routes (/ is default German)
+  RewriteRule ^de$ / [R=301,L]
+  RewriteRule ^de/(.+)$ /$1 [R=301,L]
+
+  # SPA fallback: serve index.html for all non-file, non-directory routes
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# ── Security Headers ────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  # HSTS: force HTTPS for 1 year, including subdomains
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Prevent clickjacking
+  Header always set X-Frame-Options "DENY"
+
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Control referrer information leakage
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Restrict browser feature access
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=()"
+
+  # Content Security Policy
+  # — 'self' covers all own assets
+  # — fonts.googleapis.com / fonts.gstatic.com for Inter font
+  # — cloud.umami.is for privacy-first analytics
+  # — cal.com for booking links
+  # — api.iconify.design / cdn.simpleicons.org for tool icons in cards
+  Header always set Content-Security-Policy "\
+default-src 'self'; \
+script-src 'self' 'unsafe-inline' https://cloud.umami.is; \
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+font-src 'self' https://fonts.gstatic.com; \
+img-src 'self' data: https://api.iconify.design https://cdn.simpleicons.org https://bringsai.io; \
+connect-src 'self' https://cloud.umami.is https://api.iconify.design https://cdn.simpleicons.org; \
+frame-src https://cal.com; \
+frame-ancestors 'none'; \
+base-uri 'self'; \
+form-action 'self'; \
+upgrade-insecure-requests"
+
+  # Remove server fingerprinting headers
+  Header always unset X-Powered-By
+  Header always unset Server
+</IfModule>
+
+# Disable LiteSpeed Cache for HTML (SPA needs fresh responses)
+<IfModule LiteSpeed>
+  CacheLookup off
+</IfModule>
+
+# Prevent caching of index.html to avoid stale SPA
+<FilesMatch "index\.html$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>
+
+# Cache static assets aggressively
+<FilesMatch "\.(js|css|png|jpg|jpeg|gif|svg|ico|woff2?|ttf|eot)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </IfModule>
+</FilesMatch>
