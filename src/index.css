@@ -533,6 +533,40 @@ section[id] {
     }
 }
 
+/* ===== Mobile Hero Section Optimizations ===== */
+/* Adjust hero height on mobile so logos peek at bottom */
+@media (max-width: 767px) {
+    .hero-section-mobile {
+        min-height: 100svh !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Reduce top padding on mobile to allow logos to peek */
+    .hero-section-mobile {
+        padding-top: 100px !important;
+    }
+    
+    /* Intensify center glow on mobile - clear, sharp gradient */
+    .hero-glow-center {
+        background: radial-gradient(ellipse 75% 50% at 50% 34%, rgba(59,130,246,0.32) 0%, rgba(99,102,241,0.15) 45%, transparent 70%) !important;
+    }
+    
+    /* Stronger corner glows on mobile */
+    .hero-glow-bl {
+        background: radial-gradient(ellipse 55% 45% at 8% 92%, rgba(59,130,246,0.18) 0%, transparent 65%) !important;
+    }
+    
+    .hero-glow-br {
+        background: radial-gradient(ellipse 55% 45% at 92% 92%, rgba(59,130,246,0.18) 0%, transparent 65%) !important;
+    }
+    
+    /* Allow logos section to extend slightly below fold */
+    .hero-logos-mobile {
+        margin-bottom: -40px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
 /* Phone button glow pulses */
 @keyframes phone-glow-red {
     0%, 100% {

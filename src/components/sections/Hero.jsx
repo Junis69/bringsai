@@ -8,25 +8,32 @@ export function Hero() {
 
     return (
         <section
-            className="relative flex min-h-[100svh] flex-col items-center justify-between overflow-hidden px-4 sm:px-8 md:px-12 pt-[120px] sm:pt-[100px] pb-6 text-center"
+            className="relative flex min-h-[100svh] md:min-h-[100svh] flex-col items-center justify-between overflow-hidden px-4 sm:px-8 md:px-12 pt-[120px] sm:pt-[100px] pb-6 text-center hero-section-mobile"
         >
-            {/* Center glow — focused behind headline/subtext area */}
+            {/* Center glow — Desktop: subtle, Mobile: intensified */}
             <div
-                className="absolute inset-0 pointer-events-none"
+                className="absolute inset-0 pointer-events-none hero-glow-center"
                 style={{
                     background: 'radial-gradient(ellipse 55% 38% at 50% 38%, rgba(59,130,246,0.15) 0%, transparent 72%)',
                 }}
             />
+            {/* Mobile-only enhanced center glow */}
+            <div
+                className="absolute inset-0 pointer-events-none md:hidden"
+                style={{
+                    background: 'radial-gradient(ellipse 85% 55% at 50% 32%, rgba(59,130,246,0.35) 0%, rgba(99,102,241,0.18) 35%, transparent 65%)',
+                }}
+            />
             {/* Bottom-left corner glow — subtle depth */}
             <div
-                className="absolute inset-0 pointer-events-none"
+                className="absolute inset-0 pointer-events-none hero-glow-bl"
                 style={{
                     background: 'radial-gradient(ellipse 50% 40% at 4% 96%, rgba(59,130,246,0.082) 0%, transparent 70%)',
                 }}
             />
             {/* Bottom-right corner glow — subtle depth, consistent blue */}
             <div
-                className="absolute inset-0 pointer-events-none"
+                className="absolute inset-0 pointer-events-none hero-glow-br"
                 style={{
                     background: 'radial-gradient(ellipse 50% 40% at 96% 96%, rgba(59,130,246,0.09) 0%, transparent 70%)',
                 }}
@@ -117,7 +124,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="relative z-10 w-full mt-auto pt-8"
+                className="relative z-10 w-full mt-auto pt-8 hero-logos-mobile"
                 data-testid="hero-customer-logos"
             >
                 <motion.p 
