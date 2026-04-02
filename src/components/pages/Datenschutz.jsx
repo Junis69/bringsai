@@ -7,8 +7,8 @@ import { useLanguage } from "../../lib/i18n"
 const content = {
     de: {
         seo: {
-            title: "Datenschutzerklärung â€“ BringsAI UG (haftungsbeschränkt) i. G.",
-            desc: "Datenschutzerklärung der BringsAI UG (haftungsbeschränkt) i. G. Informationen zur Erhebung und Verarbeitung personenbezogener Daten gemäß DSGVO."
+            title: "Datenschutzerklärung | BringsAI",
+            desc: "Datenschutzerklärung der BringsAI UG – Informationen zur Datenverarbeitung gemäß DSGVO."
         },
         back: "Zurück zur Startseite",
         h1: "Datenschutzerklärung",
@@ -66,8 +66,8 @@ const content = {
     },
     en: {
         seo: {
-            title: "Privacy Policy â€“ BringsAI UG (haftungsbeschränkt) i. G.",
-            desc: "Privacy Policy of BringsAI UG (haftungsbeschränkt) i. G. Information on the collection and processing of personal data in accordance with the GDPR."
+            title: "Privacy Policy | BringsAI",
+            desc: "Privacy Policy of BringsAI UG – Information on data processing in accordance with GDPR."
         },
         back: "Back to Home",
         h1: "Privacy Policy",

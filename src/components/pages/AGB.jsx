@@ -7,8 +7,8 @@ import { useLanguage } from "../../lib/i18n"
 const content = {
     de: {
         seo: {
-            title: "Allgemeine Geschäftsbedingungen â€“ BringsAI UG (haftungsbeschränkt) i. G.",
-            desc: "Allgemeine Geschäftsbedingungen (AGB) der BringsAI UG (haftungsbeschränkt) i. G. für digitale Dienstleistungen, KI-Automatisierung und Prozessoptimierung."
+            title: "AGB – Allgemeine Geschäftsbedingungen | BringsAI",
+            desc: "Allgemeine Geschäftsbedingungen der BringsAI UG für digitale Dienstleistungen und KI-Automatisierung."
         },
         back: "Zurück zur Startseite",
         h1: "Allgemeine Geschäftsbedingungen",
@@ -58,8 +58,8 @@ const content = {
     },
     en: {
         seo: {
-            title: "General Terms and Conditions â€“ BringsAI UG (haftungsbeschränkt) i. G.",
-            desc: "General Terms and Conditions (GTC) of BringsAI UG (haftungsbeschränkt) i. G. for digital services, AI automation, and process optimization."
+            title: "Terms and Conditions | BringsAI",
+            desc: "General Terms and Conditions of BringsAI UG for digital services and AI automation."
         },
         back: "Back to Home",
         h1: "General Terms and Conditions",

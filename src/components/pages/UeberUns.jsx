@@ -84,8 +84,8 @@ const coreValues = {
 
 const pageContent = {
     de: {
-        seo_title: "Über BringsAI | Automatisierung für Unternehmen",
-        seo_desc: "BringsAI hilft Unternehmen, wiederkehrende Aufgaben zu automatisieren.",
+        seo_title: "Über uns – Team & Vision | BringsAI",
+        seo_desc: "Lernen Sie das Team hinter BringsAI kennen. Wir helfen Unternehmen, wiederkehrende Aufgaben zu automatisieren.",
         badge: "Über uns",
         headline: "Wir bauen Systeme,",
         headline2: "die für Sie arbeiten.",
@@ -101,8 +101,8 @@ const pageContent = {
         cta_button: "Kostenloses Erstgespräch"
     },
     en: {
-        seo_title: "About BringsAI | Automation for Businesses",
-        seo_desc: "BringsAI helps businesses automate recurring tasks.",
+        seo_title: "About Us – Team & Vision | BringsAI",
+        seo_desc: "Meet the team behind BringsAI. We help businesses automate recurring tasks.",
         badge: "About us",
         headline: "We build systems",
         headline2: "that work for you.",

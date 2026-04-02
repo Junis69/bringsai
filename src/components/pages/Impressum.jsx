@@ -7,8 +7,8 @@ import { useLanguage } from "../../lib/i18n"
 const content = {
     de: {
         seo: {
-            title: "Impressum â€“ BringsAI UG (haftungsbeschränkt) i. G.",
-            desc: "Impressum der BringsAI UG (haftungsbeschränkt) i. G. â€“ Angaben gemäß § 5 TMG. Verantwortlich: Junis Ismail, Geschäftsführer. Digitale Prozessoptimierung & KI-Implementierung."
+            title: "Impressum – Rechtliche Angaben | BringsAI",
+            desc: "Impressum der BringsAI UG – Angaben gemäß § 5 TMG."
         },
         back: "Zurück zur Startseite",
         h1: "Impressum",
@@ -51,8 +51,8 @@ const content = {
     },
     en: {
         seo: {
-            title: "Legal Notice (Impressum) â€“ BringsAI UG (haftungsbeschränkt) i. G.",
-            desc: "Legal Notice of BringsAI UG (haftungsbeschränkt) i. G. â€“ Information according to § 5 TMG. Responsible: Junis Ismail, Managing Director."
+            title: "Legal Notice (Impressum) | BringsAI",
+            desc: "Legal Notice of BringsAI UG – Information according to § 5 TMG."
         },
         back: "Back to Home",
         h1: "Legal Notice (Impressum)",

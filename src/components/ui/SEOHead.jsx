@@ -4,12 +4,12 @@ import { getHrefLangs } from "../../lib/routes";
 
 const seoData = {
     de: {
-        title: "BringsAI - Mehr Effizienz und weniger Stress im Unternehmen durch KI | Brings AI",
-        description: "Wir sind BringsAI – wir unterstützen Unternehmen dabei, wiederkehrende Aufgaben mit KI zu automatisieren. So entstehen effizientere Abläufe, weniger Stress im Alltag und mehr Zeit für das Wesentliche."
+        title: "BringsAI – KI-Automatisierung für Unternehmen",
+        description: "BringsAI automatisiert wiederkehrende Aufgaben mit KI. Effizientere Abläufe, weniger Stress, mehr Zeit für das Wesentliche. DSGVO-konform."
     },
     en: {
-        title: "BringsAI - More Efficiency and Less Stress in Business Through AI | Brings AI",
-        description: "We are BringsAI – we help businesses automate recurring tasks with AI. The result: more efficient workflows, less stress in daily operations, and more time for what matters."
+        title: "BringsAI – AI Automation for Businesses",
+        description: "BringsAI automates recurring tasks with AI. More efficient workflows, less stress, more time for what matters. GDPR compliant."
     }
 };
 
@@ -17,6 +17,18 @@ const seoData = {
  * Global component that injects canonical URLs, hreflang tags,
  * and language-specific title/description on every route change.
  */
+// Check if current environment is a preview/staging deployment
+function isPreviewEnvironment() {
+    if (typeof window === 'undefined') return false;
+    const hostname = window.location.hostname;
+    // Production domain
+    if (hostname === 'bringsai.io' || hostname === 'www.bringsai.io') return false;
+    // Localhost for development
+    if (hostname === 'localhost' || hostname === '127.0.0.1') return false;
+    // Everything else is preview/staging
+    return true;
+}
+
 export function SEOHead() {
     const location = useLocation();
 
@@ -29,6 +41,8 @@ export function SEOHead() {
 
         const isEnglish = path === '/en' || path.startsWith('/en/');
         const lang = isEnglish ? 'en' : 'de';
+        const isPreview = isPreviewEnvironment();
+        // Always use production URL for canonicals/OG - never preview domains
         const baseUrl = "https://bringsai.io";
         const dynamicCanonical = `${baseUrl}${path === "/" ? "" : path}`;
 
@@ -84,10 +98,14 @@ export function SEOHead() {
         htmlLang.setAttribute("lang", lang);
 
         // 4. noindex for sub-pages that shouldn't appear in search results
+        //    AND noindex for all preview/staging environments
         const noindexPaths = ['/leistungen', '/en/services'];
         let robotsMeta = document.querySelector('meta[name="robots"]');
         if (robotsMeta) {
-            if (noindexPaths.includes(path)) {
+            if (isPreview) {
+                // Preview/staging: always noindex to prevent Google from indexing
+                robotsMeta.setAttribute("content", "noindex, nofollow");
+            } else if (noindexPaths.includes(path)) {
                 robotsMeta.setAttribute("content", "noindex, nofollow");
             } else {
                 robotsMeta.setAttribute("content", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
