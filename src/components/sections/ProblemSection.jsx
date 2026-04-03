@@ -10,9 +10,9 @@ function ProblemCard({ item, icon: Icon, index }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{
-                duration: 0.7,
-                delay: index * 0.12,
-                ease: [0.16, 1, 0.3, 1]
+                duration: 1.2,
+                delay: index * 0.15,
+                ease: [0.22, 1, 0.36, 1]
             }}
             className="group relative h-full"
         >
@@ -59,9 +59,9 @@ function SolutionCard({ item, icon: Icon, index }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{
-                duration: 0.7,
-                delay: index * 0.12,
-                ease: [0.16, 1, 0.3, 1]
+                duration: 1.2,
+                delay: index * 0.15,
+                ease: [0.22, 1, 0.36, 1]
             }}
             className="group relative h-full"
         >
@@ -137,7 +137,7 @@ export function ProblemSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
                         className="text-center mb-12 sm:mb-16"
                     >
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--foreground)] tracking-tight leading-tight">
@@ -165,7 +165,7 @@ export function ProblemSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
                         className="text-center mb-12 sm:mb-16"
                     >
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--foreground)] tracking-tight leading-tight">

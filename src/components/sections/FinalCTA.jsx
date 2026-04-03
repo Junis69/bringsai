@@ -48,7 +48,7 @@ export function FinalCTA() {
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] leading-[1.15] mb-6"
                     style={{ letterSpacing: '-0.02em' }}
                     data-testid="final-cta-headline"
@@ -60,7 +60,7 @@ export function FinalCTA() {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.3, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     className="text-lg sm:text-xl md:text-2xl text-[var(--muted-foreground)] max-w-3xl mx-auto leading-relaxed mb-4"
                 >
                     {subline}
@@ -71,7 +71,7 @@ export function FinalCTA() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 1.3, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="text-sm sm:text-base text-[var(--muted-foreground)]/70 max-w-2xl mx-auto mb-10 sm:mb-12"
                     >
                         {smallText}
@@ -82,7 +82,7 @@ export function FinalCTA() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.3, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     className="flex flex-col items-center gap-8 mt-8"
                 >
                     <a
@@ -103,7 +103,7 @@ export function FinalCTA() {
                     <motion.span
                         initial={{ opacity: 0 }}
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 1.0, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
                         className="text-xs sm:text-sm text-[var(--muted-foreground)]/60"
                     >
                         {ctaNote}

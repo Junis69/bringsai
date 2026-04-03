@@ -45,7 +45,7 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
                     className="flex justify-center mb-10"
                 >
                     <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/40 bg-[var(--muted)]/50 py-2 px-5 text-xs sm:text-sm font-medium text-[var(--foreground)]/80 backdrop-blur-sm" data-testid="dsgvo-badge">
@@ -61,7 +61,7 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                     className="mb-7 text-center"
                 >
                     <h1
@@ -84,7 +84,7 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.3, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     className="mb-10"
                 >
                     <p className="text-base sm:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-[620px] text-center mx-auto">
@@ -96,7 +96,7 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.3, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
                     className="flex flex-col items-center gap-10"
                 >
                     <a
@@ -123,14 +123,14 @@ export function Hero() {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1.3, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 w-full mt-auto pt-8 hero-logos-mobile"
                 data-testid="hero-customer-logos"
             >
                 <motion.p 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
+                    transition={{ duration: 1.0, delay: 1.0 }}
                     className="text-xs sm:text-sm text-[var(--muted-foreground)]/50 mb-7 uppercase tracking-wider font-medium"
                 >
                     Unternehmen, die Prozesse mit BringsAI vereinfachen

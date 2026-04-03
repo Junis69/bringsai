@@ -5,7 +5,7 @@ export function Reveal({
     children,
     direction = "up",
     delay = 0,
-    duration = 0.85,
+    duration = 1.4,
     className = "",
     distance,
 }) {
@@ -19,7 +19,7 @@ export function Reveal({
             initial={{ opacity: 0, [axis]: sign * offset }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.05, margin: "0px 0px -50px 0px" }}
-            transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
         >
             {children}
         </motion.div>

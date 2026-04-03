@@ -11,7 +11,7 @@ function FeatureItem({ feature, index }) {
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: 0.1 + index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.55, delay: 0.1 + index * 0.07, ease: [0.22, 1, 0.36, 1] }}
             className="flex gap-3 text-sm text-[var(--muted-foreground)] items-start"
         >
             <Check className="h-5 w-5 text-[var(--accent)] shrink-0 mt-0.5" />

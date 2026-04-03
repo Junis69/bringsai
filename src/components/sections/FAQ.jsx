@@ -23,7 +23,7 @@ export function FAQ() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.85 }}
                     className="text-center mb-14"
                 >
                     <h2 className="text-3xl font-bold text-[var(--foreground)] sm:text-4xl">{t('faq.title')}</h2>
@@ -65,7 +65,7 @@ function FAQItem({ question, answer, index }) {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.04 }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
             className="group relative"
         >
             <div className={`relative rounded-xl bg-[#0c0c14] border transition-all duration-300 ${

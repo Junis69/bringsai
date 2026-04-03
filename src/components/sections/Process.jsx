@@ -51,7 +51,7 @@ function ProcessStep({ step, index, isLast, isActive, hasPassed }) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1.0, delay: index * 0.18, ease: [0.22, 1, 0.36, 1] }}
             >
                 {/* Step number badge */}
                 <motion.div
@@ -119,7 +119,7 @@ function ProcessStep({ step, index, isLast, isActive, hasPassed }) {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.85, delay: index * 0.18 + 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
                 <h3 className="text-sm sm:text-lg font-bold text-[var(--foreground)] mb-2">
                     <span className="text-[var(--accent)]">0{step.order}</span> {step.title}
@@ -167,7 +167,7 @@ export function Process() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
                     >
                         {t('process.title')}
                     </motion.h2>

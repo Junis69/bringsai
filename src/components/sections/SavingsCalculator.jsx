@@ -84,7 +84,7 @@ export function SavingsCalculator() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.75 }}
+                    transition={{ duration: 1.25 }}
                     className="text-center mb-12 space-y-4"
                 >
                     <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl text-[var(--foreground)]">
@@ -100,7 +100,7 @@ export function SavingsCalculator() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+                    transition={{ duration: 1.3, delay: 0.35 }}
                     className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 md:p-10 space-y-8 shadow-sm"
                 >
                     {/* Sliders */}

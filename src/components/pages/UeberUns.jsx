@@ -3,20 +3,7 @@ import { Footer } from "../ui/Footer"
 import { Mail, Phone, Zap, Link2, Shield, TrendingUp, ArrowRight } from "lucide-react"
 import { useLanguage } from "../../lib/i18n"
 import { motion, useInView } from "framer-motion"
-import { useRef, useEffect, useMemo } from "react"
-
-// Simple stars without heavy blur
-function generateStars(count) {
-    return Array.from({ length: count }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        size: Math.random() * 1.5 + 0.5,
-        delay: Math.random() * 8,
-        duration: 20 + Math.random() * 20,
-        opacity: 0.15 + Math.random() * 0.25,
-    }));
-}
+import { useRef, useEffect } from "react"
 
 function FadeIn({ children, delay = 0, className = "" }) {
     const ref = useRef(null)
@@ -27,7 +14,7 @@ function FadeIn({ children, delay = 0, className = "" }) {
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
             className={className}
         >
             {children}
@@ -124,7 +111,6 @@ export function UeberUns() {
     const t = pageContent[language] || pageContent.de
     const values = coreValues[language] || coreValues.de
     const calUrl = language === 'en' ? "https://cal.com/bringsai/strategy-call" : "https://cal.com/bringsai/erstgespraech"
-    const stars = useMemo(() => generateStars(60), [])
 
     useEffect(() => {
         document.title = t.seo_title
@@ -138,31 +124,6 @@ export function UeberUns() {
         <>
             <Navbar />
             <main className="min-h-screen bg-[var(--background)] relative overflow-hidden" data-testid="about-page">
-                {/* Stars background - subtle */}
-                <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-                    {stars.map((star) => (
-                        <div
-                            key={star.id}
-                            className="absolute rounded-full bg-white"
-                            style={{
-                                left: `${star.left}%`,
-                                top: `${star.top}%`,
-                                width: `${star.size}px`,
-                                height: `${star.size}px`,
-                                opacity: star.opacity,
-                                animation: `star-drift-about-${star.id % 6} ${star.duration}s ease-in-out ${star.delay}s infinite alternate`,
-                            }}
-                        />
-                    ))}
-                    <style>{`
-                        @keyframes star-drift-about-0 { from { transform: translate(0, 0); } to { transform: translate(12px, -8px); } }
-                        @keyframes star-drift-about-1 { from { transform: translate(0, 0); } to { transform: translate(-10px, 6px); } }
-                        @keyframes star-drift-about-2 { from { transform: translate(0, 0); } to { transform: translate(8px, 10px); } }
-                        @keyframes star-drift-about-3 { from { transform: translate(0, 0); } to { transform: translate(-12px, -6px); } }
-                        @keyframes star-drift-about-4 { from { transform: translate(0, 0); } to { transform: translate(6px, -12px); } }
-                        @keyframes star-drift-about-5 { from { transform: translate(0, 0); } to { transform: translate(-8px, 8px); } }
-                    `}</style>
-                </div>
 
                 {/* Hero Section */}
                 <section className="relative z-10 pt-32 sm:pt-40 pb-20 sm:pb-28 px-6 sm:px-8">
@@ -173,7 +134,7 @@ export function UeberUns() {
                             </div>
                         </FadeIn>
                         
-                        <FadeIn delay={0.1}>
+                        <FadeIn delay={0.12}>
                             <h1 
                                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--foreground)] leading-[1.1] mb-4"
                                 style={{ letterSpacing: '-0.02em' }}
@@ -187,7 +148,7 @@ export function UeberUns() {
                             </h1>
                         </FadeIn>
                         
-                        <FadeIn delay={0.2}>
+                        <FadeIn delay={0.24}>
                             <p className="text-lg sm:text-xl text-[var(--muted-foreground)] max-w-xl leading-relaxed">
                                 {t.intro}
                             </p>
@@ -196,29 +157,32 @@ export function UeberUns() {
                 </section>
 
                 {/* Core Values Cards */}
-                <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-8">
+                <section className="relative z-10 py-20 sm:py-28 px-6 sm:px-8">
                     <div className="mx-auto max-w-5xl">
                         <FadeIn>
-                            <p className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-10 text-center">
+                            <p className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-12 text-center">
                                 {t.section_what}
                             </p>
                         </FadeIn>
                         
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
                             {values.map((value, i) => (
-                                <FadeIn key={i} delay={0.1 + i * 0.05}>
+                                <FadeIn key={i} delay={0.1 + i * 0.08}>
                                     <div 
-                                        className="group relative p-5 sm:p-6 rounded-2xl bg-[#0c0c14] border border-white/[0.06] hover:border-[var(--accent)]/20 transition-all duration-300"
+                                        className="group relative rounded-2xl bg-[#0c0c14] border border-white/[0.06] hover:border-[var(--accent)]/20 transition-all duration-500 overflow-hidden flex flex-col"
+                                        style={{ minHeight: '200px' }}
                                         data-testid={`value-card-${i}`}
                                     >
                                         {/* Top accent line on hover */}
-                                        <div className="absolute top-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/0 group-hover:via-[var(--accent)]/25 to-transparent transition-all duration-300" />
+                                        <div className="absolute top-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/0 group-hover:via-[var(--accent)]/25 to-transparent transition-all duration-500" />
                                         
-                                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--accent)]/[0.08] border border-[var(--accent)]/15 flex items-center justify-center mb-4 group-hover:bg-[var(--accent)]/[0.12] transition-all duration-300">
-                                            <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent)]" />
+                                        <div className="p-6 sm:p-7 flex flex-col flex-1">
+                                            <div className="w-11 h-11 rounded-xl bg-[var(--accent)]/[0.08] border border-[var(--accent)]/15 flex items-center justify-center mb-5 group-hover:bg-[var(--accent)]/[0.12] transition-all duration-500">
+                                                <value.icon className="w-5 h-5 text-[var(--accent)]" />
+                                            </div>
+                                            <h3 className="text-base font-semibold text-[var(--foreground)] mb-2">{value.title}</h3>
+                                            <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">{value.desc}</p>
                                         </div>
-                                        <h3 className="text-sm sm:text-base font-semibold text-[var(--foreground)] mb-1.5">{value.title}</h3>
-                                        <p className="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">{value.desc}</p>
                                     </div>
                                 </FadeIn>
                             ))}
@@ -227,10 +191,10 @@ export function UeberUns() {
                 </section>
 
                 {/* Team Section */}
-                <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-8">
+                <section className="relative z-10 py-20 sm:py-28 px-6 sm:px-8">
                     <div className="mx-auto max-w-4xl">
                         <FadeIn>
-                            <p className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-10 text-center">
+                            <p className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-12 text-center">
                                 {t.section_team}
                             </p>
                         </FadeIn>
@@ -238,19 +202,28 @@ export function UeberUns() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* Junis */}
                             <FadeIn delay={0.1}>
-                                <div className="group relative p-6 sm:p-8 rounded-2xl bg-[#0c0c14] border border-white/[0.06] hover:border-white/[0.1] transition-all duration-300" data-testid="team-card-junis">
-                                    <div className="relative z-10">
-                                        <h3 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] mb-1">Junis Ismail</h3>
-                                        <p className="text-[var(--accent)] font-medium text-sm mb-4">{t.junis_role}</p>
-                                        <p className="text-[var(--muted-foreground)] text-sm leading-relaxed mb-6 italic">
+                                <div 
+                                    className="group relative rounded-2xl bg-[#0c0c14] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 overflow-hidden flex flex-col"
+                                    style={{ minHeight: '280px' }}
+                                    data-testid="team-card-junis"
+                                >
+                                    {/* Subtle top accent */}
+                                    <div className="absolute top-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/0 group-hover:via-[var(--accent)]/20 to-transparent transition-all duration-500" />
+                                    
+                                    <div className="p-7 sm:p-9 flex flex-col flex-1">
+                                        <div className="mb-6">
+                                            <h3 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] mb-1">Junis Ismail</h3>
+                                            <p className="text-[var(--accent)] font-medium text-sm">{t.junis_role}</p>
+                                        </div>
+                                        <p className="text-[var(--muted-foreground)] text-sm leading-relaxed mb-auto italic">
                                             "{t.junis_quote}"
                                         </p>
-                                        <div className="flex flex-col gap-2.5">
-                                            <a href="mailto:info@bringsai.de" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">
+                                        <div className="flex flex-col gap-3 mt-7 pt-6 border-t border-white/[0.05]">
+                                            <a href="mailto:info@bringsai.de" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300">
                                                 <Mail className="h-4 w-4 flex-shrink-0" />
                                                 <span>info@bringsai.de</span>
                                             </a>
-                                            <a href="tel:+4917672986127" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">
+                                            <a href="tel:+4917672986127" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300">
                                                 <Phone className="h-4 w-4 flex-shrink-0" />
                                                 <span>+49 176 72986127</span>
                                             </a>
@@ -260,20 +233,29 @@ export function UeberUns() {
                             </FadeIn>
 
                             {/* Simon */}
-                            <FadeIn delay={0.2}>
-                                <div className="group relative p-6 sm:p-8 rounded-2xl bg-[#0c0c14] border border-white/[0.06] hover:border-white/[0.1] transition-all duration-300" data-testid="team-card-simon">
-                                    <div className="relative z-10">
-                                        <h3 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] mb-1">Simon Poscher</h3>
-                                        <p className="text-[var(--accent)] font-medium text-sm mb-4">{t.simon_role}</p>
-                                        <p className="text-[var(--muted-foreground)] text-sm leading-relaxed mb-6 italic">
+                            <FadeIn delay={0.22}>
+                                <div 
+                                    className="group relative rounded-2xl bg-[#0c0c14] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 overflow-hidden flex flex-col"
+                                    style={{ minHeight: '280px' }}
+                                    data-testid="team-card-simon"
+                                >
+                                    {/* Subtle top accent */}
+                                    <div className="absolute top-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/0 group-hover:via-[var(--accent)]/20 to-transparent transition-all duration-500" />
+                                    
+                                    <div className="p-7 sm:p-9 flex flex-col flex-1">
+                                        <div className="mb-6">
+                                            <h3 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] mb-1">Simon Poscher</h3>
+                                            <p className="text-[var(--accent)] font-medium text-sm">{t.simon_role}</p>
+                                        </div>
+                                        <p className="text-[var(--muted-foreground)] text-sm leading-relaxed mb-auto italic">
                                             "{t.simon_quote}"
                                         </p>
-                                        <div className="flex flex-col gap-2.5">
-                                            <a href="mailto:simonposcher139@gmail.com" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">
+                                        <div className="flex flex-col gap-3 mt-7 pt-6 border-t border-white/[0.05]">
+                                            <a href="mailto:simonposcher139@gmail.com" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300">
                                                 <Mail className="h-4 w-4 flex-shrink-0" />
                                                 <span className="truncate">simonposcher139@gmail.com</span>
                                             </a>
-                                            <a href="tel:+436603195452" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">
+                                            <a href="tel:+436603195452" className="flex items-center gap-2.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300">
                                                 <Phone className="h-4 w-4 flex-shrink-0" />
                                                 <span>+43 660 3195452</span>
                                             </a>
@@ -286,25 +268,25 @@ export function UeberUns() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-8 pb-24 sm:pb-32">
+                <section className="relative z-10 py-20 sm:py-28 px-6 sm:px-8 pb-28 sm:pb-36">
                     <FadeIn>
                         <div className="mx-auto max-w-3xl text-center">
-                            <div className="relative p-8 sm:p-12 md:p-16 rounded-3xl bg-[#0c0c14] border border-[var(--accent)]/20 overflow-hidden" data-testid="about-cta">
+                            <div className="relative p-10 sm:p-14 md:p-18 rounded-3xl bg-[#0c0c14] border border-[var(--accent)]/20 overflow-hidden" data-testid="about-cta">
                                 {/* Top accent line */}
                                 <div className="absolute top-0 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/40 to-transparent" />
                                 
                                 <div className="relative z-10">
-                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4">
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-5">
                                         {t.cta_title}
                                     </h2>
-                                    <p className="text-[var(--muted-foreground)] mb-8 text-sm sm:text-base">
+                                    <p className="text-[var(--muted-foreground)] mb-10 text-sm sm:text-base max-w-lg mx-auto">
                                         {t.cta_subtitle}
                                     </p>
                                     <a
                                         href={calUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white bg-[var(--accent)] hover:bg-[var(--accent-hover)] rounded-full transition-all duration-300 group"
+                                        className="inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white bg-[var(--accent)] hover:bg-[var(--accent-hover)] rounded-full transition-all duration-300 group"
                                         data-testid="about-cta-button"
                                     >
                                         <span>{t.cta_button}</span>

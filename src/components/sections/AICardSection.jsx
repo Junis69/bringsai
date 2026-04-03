@@ -495,7 +495,7 @@ function AICard({ card, index }) {
       "
       style={{
         opacity: 1,
-        animation: `card-enter 0.8s ease-out ${index * 0.12}s both`,
+        animation: `card-enter 1.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.15}s both`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
       }}
     >
@@ -570,7 +570,7 @@ export function AICardSection() {
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.12 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Top row – 3 equal cards */}
         <div
