@@ -146,8 +146,8 @@ function HomePage() {
       <Navbar />
       <main className="space-y-0 relative z-10">
         <Hero />
-        <CaseStudiesSection />
         <ProblemSection />
+        <CaseStudiesSection />
         <AICardSection />
         <Process />
         <PricingSection />
