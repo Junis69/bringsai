@@ -476,10 +476,25 @@ const BOTTOM_CARDS = [
    Main Section Component
 ======================================== */
 
+// Entrance directions per card index: left, up, right, left, right
+const CARD_ENTRANCE = [
+  { x: -60, y: 0 },   // from left
+  { x: 0, y: 50 },    // from below
+  { x: 60, y: 0 },    // from right
+  { x: -50, y: 20 },  // from left-below
+  { x: 50, y: 20 },   // from right-below
+];
+
 function AICard({ card, index }) {
   const Preview = PREVIEW_MAP[card.id];
+  const entrance = CARD_ENTRANCE[index] || { x: 0, y: 40 };
+
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: entrance.x, y: entrance.y }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 2.0, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
       data-testid={`ai-card-${card.id}`}
       className="
         group relative overflow-hidden rounded-3xl
@@ -494,8 +509,6 @@ function AICard({ card, index }) {
         w-full
       "
       style={{
-        opacity: 1,
-        animation: `card-enter 2.0s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.2}s both`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
       }}
     >
@@ -538,7 +551,7 @@ function AICard({ card, index }) {
           {card.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -565,13 +578,8 @@ export function AICardSection() {
         </p>
       </div>
 
-      {/* Card grids — single scroll-triggered entrance, fires once */}
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.12 }}
-        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-      >
+      {/* Card grids — each card animates individually from different directions */}
+      <div>
         {/* Top row – 3 equal cards */}
         <div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 mb-6"
@@ -591,7 +599,7 @@ export function AICardSection() {
             <AICard key={card.id} card={card} index={index + 3} />
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
